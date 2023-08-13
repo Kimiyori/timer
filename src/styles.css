@@ -1,0 +1,29 @@
+:root {
+  --timer-width: 100px;
+  --timer-height: 50px;
+  --timer-gap: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--timer-width));
+  grid-gap: var(--timer-gap);
+}
+
+.timer {
+  --timer-hot: 0; /* Fallback, real value set in runtime */
+  width: var(--timer-width);
+  height: var(--timer-height);
+  border-radius: 5px;
+  background-image: linear-gradient(
+      rgba(255, 94, 19, var(--timer-hot)),
+      rgba(255, 94, 19, var(--timer-hot))
+    ),
+    linear-gradient(lightgray, lightgray);
+
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
